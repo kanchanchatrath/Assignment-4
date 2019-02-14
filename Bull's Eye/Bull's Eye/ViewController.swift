@@ -8,7 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ChecklistDelegate {
+    
+    
+    
+    func didDelegate(data: [String]) {
+        
+        oper = data
+        index = data.count
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "show"{
+            let tableView: TableViewController = segue.destination as! TableViewController
+            tableView.delegate = self
+        }
+    }
     
 
     
@@ -27,7 +43,7 @@ class ViewController: UIViewController {
     var updateround = 0
     var oper:[String] = ["+","-","*"]
     var operIndex:Int = 0
-//    var correctquestion: Int = 0 don't need
+    var index:Int = 3
     var questionscount: Int = 0
     var mimimumLevel: Int = 2
     var level:Int = 1
@@ -42,7 +58,7 @@ class ViewController: UIViewController {
         number1.text = "\(randomnumber1)"
         randomnumber2 = Int((arc4random_uniform(10)))
         number2.text = "\(randomnumber2)"
-        operIndex = Int((arc4random_uniform(3)))
+        operIndex = Int((arc4random_uniform(UInt32(index))))
         randomope.text = "\(oper[operIndex])"
     }
     

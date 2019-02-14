@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Vvh-7V-9RD">
-                                <rect key="frame" x="-93" y="0.0" width="760" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-BQ-Brx">
@@ -129,7 +129,7 @@
                     <navigationItem key="navigationItem" title="Equation Maven" id="fT0-6w-kz3">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="dDc-vT-gbw">
                             <connections>
-                                <segue destination="fhf-tK-z2c" kind="presentation" id="2Wn-pe-BOQ"/>
+                                <segue destination="fhf-tK-z2c" kind="presentation" identifier="show" id="ZwQ-h6-TX4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -172,16 +172,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="NlR-I3-GGJ">
+                            <rect key="frame" x="0.0" y="0.0" width="667" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Checklist" id="hVV-Ln-uWv">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="done" id="Hqg-UP-ssj">
+                                        <connections>
+                                            <action selector="done:" destination="fhf-tK-z2c" id="duG-sC-MMR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gKf-QG-bUi">
-                                <rect key="frame" x="0.0" y="28" width="667" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChecklistItem" id="gKf-QG-bUi">
+                                <rect key="frame" x="0.0" y="72" width="667" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gKf-QG-bUi" id="8LZ-eR-MiO">
                                     <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nx3-FT-LKd">
-                                            <rect key="frame" x="31" y="12" width="139" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nx3-FT-LKd">
+                                            <rect key="frame" x="31" y="12" width="616" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" identifier="ChecklistItem"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -200,7 +213,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y68-Kz-aO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5136" y="711"/>
+            <point key="canvasLocation" x="5135.9820089955028" y="709.60000000000002"/>
         </scene>
     </scenes>
     <resources>
